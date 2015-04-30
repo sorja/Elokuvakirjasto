@@ -1,0 +1,9 @@
+<form name="searchform">
+	<input type="text" required placeholder="search" ng-model="query"/>
+	<button ng-click="search()"> go </button>
+</form>
+<ul ng-repeat="movie in movies">
+	 <a ng-href="#/movies/{{movie.$id}}">{{movie.name}}
+	 	<button ng-click="delMovie(movie)">poista</button></a>
+</ul>
+<a ng-href="#/movies/new"> new movie </a>

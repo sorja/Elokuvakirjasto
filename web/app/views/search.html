@@ -1,0 +1,12 @@
+<div show="movies.Error"><h2>{{movies.Error}}</h2></div>
+<div show="!movies.Error">
+	<ul ng-repeat="movie in movies.Search">
+		<li> <a href="http://www.imdb.com/title/{{movie.imdbID}}">{{movie}}</a> </li>
+	</ul>
+</div>
+
+<ng-pluralize count="movies.Search.length"
+	when="{'0': 'No results.',
+	'1': 'One result found.',
+	'other': '{} results found.'}">
+</ng-pluralize>

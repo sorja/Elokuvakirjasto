@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Elokuvakirjasto</title>
   </head>
-  <body ng-app="Elokuvakirjasto">
+  <body ng-app="MovieLibrary">
     <h1>Hello, world!</h1>
     <div ng-view></div>
 
@@ -18,5 +18,13 @@
 
     <!-- Linkitä omat tiedostosi tähän (huomaa, että polun juuri on web-kansio!) -->
     <script src="app/app.js"></script>    
+    <script src="app/services/FirebaseService.js"></script>    
+    <script src="app/services/APIService.js"></script>    
+    <script src="app/controllers/AddMovieController.js"></script>    
+    <script src="app/controllers/ListMoviesController.js"></script>    
+    <script src="app/controllers/ShowMovieController.js"></script>    
+    <script src="app/controllers/EditMovieController.js"></script>    
+    <script src="app/controllers/SearchMovieController.js"></script>    
+
   </body>
 </html>

@@ -1,0 +1,8 @@
+<h1 ng-show="!movie"> Fetching data ! Hold on ! </h1>
+<div ng-show="movie">
+	<h2> {{movie.name}} </h2>
+	<p> Director: {{movie.director}} <p>
+	<p> Released: {{movie.release}} </p>
+	<p> Description: {{movie.description}}</p>
+	<button ng-click="editMovie()"> Edit </button>
+</div>

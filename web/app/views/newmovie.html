@@ -1,0 +1,16 @@
+<h1> Add new movie </h1>
+<form name="movieform">
+	<label for="name">Movie Name</label></br>
+	<input type="text" name="name" ng-model="movie.name" required/> </br> </br>
+	<label for="director">Movie Director</label></br>
+	<input type="text" name="director" ng-model="movie.director" required/> </br> </br>
+
+	<label for="release">Movie release year</label></br>
+	<input type="number" name="release" ng-model="movie.release" required/> </br> </br>
+
+	
+	<label for="release">Movie description</label><br/>
+	<textarea required ng-model="movie.description"
+		name="description" id="description" cols="30" rows="10"></textarea><br/>
+	<input type="submit" ng-click="addMovie()">
+</form>
