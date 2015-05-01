@@ -8,6 +8,9 @@
   </head>
   <body ng-app="MovieLibrary">
     <h1>Hello, world!</h1>
+        <button ng-show="userLoggedIn()" ng-click="logOut()" ng-if="userLoggedIn">
+            Log out
+    </button>
     <div ng-view></div>
 
     <!-- Hyödyllisiä kirjastoja -->
@@ -20,11 +23,13 @@
     <script src="app/app.js"></script>    
     <script src="app/services/FirebaseService.js"></script>    
     <script src="app/services/APIService.js"></script>    
+    <script src="app/services/AuthenticationService.js"></script>    
     <script src="app/controllers/AddMovieController.js"></script>    
     <script src="app/controllers/ListMoviesController.js"></script>    
     <script src="app/controllers/ShowMovieController.js"></script>    
     <script src="app/controllers/EditMovieController.js"></script>    
     <script src="app/controllers/SearchMovieController.js"></script>    
+    <script src="app/controllers/UserController.js"></script>    
 
   </body>
 </html>

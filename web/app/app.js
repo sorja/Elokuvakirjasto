@@ -1,8 +1,16 @@
 var MovieLibrary = angular.module('MovieLibrary', ['ngRoute', 'firebase']);
 
 MovieLibrary.config(['$httpProvider', function($httpProvider) {
-  delete $httpProvider.defaults.headers.common["X-Requested-With"]
+	delete $httpProvider.defaults.headers.common["X-Requested-With"]
 }]);
+
+MovieLibrary.run(function(AuthenticationService, $rootScope){
+	$rootScope.logOut = function(){
+		AuthenticationService.logUserOut();
+	};
+
+	$rootScope.userLoggedIn = AuthenticationService.getUserLoggedIn();
+});
 
 MovieLibrary.config(function ($routeProvider) {
 	$routeProvider.when('/', {
@@ -15,7 +23,13 @@ MovieLibrary.config(function ($routeProvider) {
 	})
 	.when('/movies/new', {
 		controller: 'AddMovieController',
-		templateUrl: 'app/views/newmovie.html'
+		templateUrl: 'app/views/newmovie.html',
+		resolve: { 
+			currentAuth: function(AuthenticationService){ 
+				return AuthenticationService.checkLoggedIn();
+			}
+		}
+
 	})
 	.when('/movies/:id', {
 		controller: 'ShowMovieController',
@@ -27,7 +41,17 @@ MovieLibrary.config(function ($routeProvider) {
 	})
 	.when('/movies/:id/edit', {
 		controller: 'EditMovieController',
-		templateUrl: 'app/views/editmovie.html'
+		templateUrl: 'app/views/editmovie.html',
+		resolve: { 
+			currentAuth: function(AuthenticationService){ 
+				return AuthenticationService.checkLoggedIn();
+			}
+		}
+
+	})
+	.when('/login', {
+		controller: 'UserController',
+		templateUrl: 'app/views/login.html',
 	})
 	.otherwise({
 		redirectTo: '/'
