@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css">
     <title>Elokuvakirjasto</title>
-  </head>
-  <body ng-app="MovieLibrary">
-    <h1>Hello, world!</h1>
-        <button ng-show="userLoggedIn()" ng-click="logOut()" ng-if="userLoggedIn">
-            Log out
-    </button>
-    <div ng-view></div>
+</head>
+<body ng-app="MovieLibrary">
+    <button ng-show="userLoggedIn" ng-click="logOut()"> Logout </button>
+    <button ng-show="!userLoggedIn"> login </button>
+    <div ng-view>Loading...</div>
 
     <!-- Hyödyllisiä kirjastoja -->
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/firebase/firebase.js"></script>
@@ -31,5 +33,5 @@
     <script src="app/controllers/SearchMovieController.js"></script>    
     <script src="app/controllers/UserController.js"></script>    
 
-  </body>
+</body>
 </html>

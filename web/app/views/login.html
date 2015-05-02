@@ -1,0 +1,8 @@
+<h2> Log in or register </h2>
+<form name="login">
+	<input type="email" ng-model="user.email" />
+	<input type="password" ng-model="user.password" />
+	<input type="submit" ng-click="logIn()" value="login"/>
+	<input type="submit" ng-click="register()" value="register"/>
+	<span> {{scope.message}} </span>
+</form>
